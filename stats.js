@@ -20,6 +20,7 @@ exports.normal = function(mean,variance){
   }
   return this;
 }
+
 function erf_series(x,n){
   total = 0;
   for (k=0;k<n;k++){
@@ -27,10 +28,11 @@ function erf_series(x,n){
   }
   return total;
 }
-//}
+
 function erf_term(x,k){
-  return 2*Math.pow(-1,k)*Math.pow(x,1+2*k)/((1+2*k)*factorial(k)*Math.PI)
+  return 2*Math.pow(-1,k)*Math.pow(x,1+2*k)/((1+2*k)*factorial(k)*Math.sqrt(Math.PI))
 }
+
 var f = [];
 function factorial (n) {
   if (n == 0 || n == 1)

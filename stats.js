@@ -4,6 +4,11 @@
 
 //statsjs.prototype.pdf = function(){};
 
+//TODO
+// 1. improve inverse erf/ normal quantiles
+// 2. generate random numbers
+// 3. fit data to a model
+//
 exports.normal = function(mean,variance){
 
   mean = typeof mean !== 'undefined' ? mean : 0;
@@ -18,6 +23,12 @@ exports.normal = function(mean,variance){
   this.cdf = function(x){
     return (1+erf_series((x-this.mean)/(this.var*Math.sqrt(2)),25))/2
   }
+  
+
+  this.quantile = function(s){
+    return this.var*Math.sqrt(2)*inverse_erf(2*s - 1)
+  }
+
   return this;
 }
 
@@ -41,4 +52,8 @@ function factorial (n) {
     return f[n];
   return f[n] = factorial(n-1) * n;
 }
+
+function inverse_erf(s){
+  return ((Math.sqrt(Math.PI))*s/2)+(Math.pow(Math.PI,3/2)*Math.pow(s,3)/24)+(7*Math.pow(Math.PI,5/2)*Math.pow(s,3)/960)
+  }
 

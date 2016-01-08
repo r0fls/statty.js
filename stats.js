@@ -26,6 +26,12 @@ exports.normal = normal;
   }
 
   this.quantile = function(s){
+    if (s>1 || s<0){
+        return Number.NaN
+    }
+    if (s == .5){
+        return this.mean
+    }
     return this.mean+this.var*Math.sqrt(2)*inverse_erf(2*s - 1)
   }
 

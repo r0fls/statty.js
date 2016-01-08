@@ -1,4 +1,4 @@
-# statsjs
+# statty.js
 Statistics for javascript
 
 Intended for `node.js`. Still in development, so to use it currently, you need to clone the repo and put it in your project. Example usage:

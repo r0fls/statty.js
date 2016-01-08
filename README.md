@@ -18,3 +18,4 @@ So far the only distribution is the `normal` distribution, which is initialized 
     norm = stats.normal.fit([1,2,3,4,5])   \\ returns model fitted to data
     console.log(norm.mean)                 \\ mean attribute
     console.log(norm.variance)             \\ variance attribute
+    console.log(norm.rand(10))             \\ generates array of 10 random numbers

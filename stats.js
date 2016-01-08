@@ -29,7 +29,15 @@ exports.normal = normal;
     return this.mean+this.var*Math.sqrt(2)*inverse_erf(2*s - 1)
   }
 
-  this.rand = function(){
+  this.rand = function(iters){
+    iters = typeof iters !== 'undefined' ? iters : 1;
+    if (iters>1){
+    arr = new Array;
+    for (i=0;i<iters;i++){
+        arr.push(this.quantile(Math.random()))
+    }
+    return arr
+    }
     return this.quantile(Math.random())
   }
 

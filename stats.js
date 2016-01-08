@@ -7,8 +7,10 @@
 //TODO
 // 1. fit data to a model
 // 2. add more distributions
-//
-exports.normal = function(mean,variance){
+
+exports.normal = normal; 
+  
+  function normal(mean,variance) {
 
   mean = typeof mean !== 'undefined' ? mean : 0;
   variance = typeof variance !== 'undefined' ? variance : 1;
@@ -22,7 +24,6 @@ exports.normal = function(mean,variance){
   this.cdf = function(x){
     return (1+erf_series((x-this.mean)/(this.var*Math.sqrt(2)),25))/2
   }
-  
 
   this.quantile = function(s){
     return this.mean+this.var*Math.sqrt(2)*inverse_erf(2*s - 1)
@@ -34,6 +35,21 @@ exports.normal = function(mean,variance){
 
   return this;
 }
+
+normal.fit = function(data){
+    mean = 0;
+    for (i=0;i<data.length;i++){
+      mean += data[i]
+    }
+    mean = mean/data.length;
+    variance = 0;
+    for (j=0;j<data.length;j++){
+      variance += Math.pow(mean-data[j],2);
+    }
+    variance = variance/(data.length-1);
+    return normal(mean,variance)
+  }
+
 
 function erf_series(x,n){
   total = 0;

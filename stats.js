@@ -5,8 +5,9 @@
 //statsjs.prototype.pdf = function(){};
 
 //TODO
-// 1. fit data to a model
 // 2. add more distributions
+//    a. Uniform
+//
 
 exports.normal = normal; 
   

@@ -53,7 +53,10 @@ function factorial (n) {
   return f[n] = factorial(n-1) * n;
 }
 
-function inverse_erf(s){
-  return ((Math.sqrt(Math.PI))*s/2)+(Math.pow(Math.PI,3/2)*Math.pow(s,3)/24)+(7*Math.pow(Math.PI,5/2)*Math.pow(s,3)/960)
-  }
+function inverse_erf(x){
+  a = 8*(Math.PI - 3)/(3*Math.PI*(4-Math.PI))
+  term1 = Math.pow((2/(Math.PI*a)) + Math.log(1-Math.pow(x,2))/2,2) - Math.log(1-Math.pow(x,2))/a
+  term2 = (2/(Math.PI*a)) + Math.log(1-Math.pow(x,2))/2
+  return (Math.abs(x)/x)*Math.sqrt(Math.sqrt(term1)-term2) 
+}
 

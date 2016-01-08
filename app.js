@@ -1,3 +1,3 @@
 var stats = require('./stats.js')
 normal = stats.normal();
-console.log(stats.normal().cdf(2));
+console.log(stats.normal().quantile(.999))

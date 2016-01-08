@@ -5,9 +5,8 @@
 //statsjs.prototype.pdf = function(){};
 
 //TODO
-// 1. improve inverse erf/ normal quantiles
-// 2. generate random numbers
-// 3. fit data to a model
+// 1. fit data to a model
+// 2. add more distributions
 //
 exports.normal = function(mean,variance){
 

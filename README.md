@@ -1,9 +1,9 @@
 # statty.js
 Statistics for javascript
 
-Intended for `node.js`. Still in development, so to use it currently, you need to clone the repo and put it in your project. Example usage:
+Intended for `node.js`. Install with `npm install statty.js` or clone the repo and put it in your project. Example usage:
 
-    var stats = require('./stats.js')
+    var stats = require('statty.js')
     console.log(stats.normal(5,1).rand())
     
 So far the only distribution is the `normal` distribution, which is initialized with `mean` and `variance`. It then has the following methods:

@@ -1,0 +1,26 @@
+{
+  "name": "statty.js",
+  "version": "0.0.1",
+  "description": "JavaScript Probability and Statistics",
+  "main": "stats.js",
+  "directories": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r0fls/statty.js.git"
+  },
+  "keywords": [
+    "probability",
+    "statistics",
+    "stats",
+    "distribution"
+  ],
+  "author": "r0fls <raphaeldeem@yahoo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/r0fls/statty.js/issues"
+  },
+  "homepage": "https://github.com/r0fls/statty.js"
+}

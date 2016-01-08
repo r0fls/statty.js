@@ -1,3 +1,2 @@
 var stats = require('./stats.js')
-normal = stats.normal();
-console.log(stats.normal().quantile(.999))
+console.log(stats.normal(5,1).rand())

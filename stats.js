@@ -26,7 +26,11 @@ exports.normal = function(mean,variance){
   
 
   this.quantile = function(s){
-    return this.var*Math.sqrt(2)*inverse_erf(2*s - 1)
+    return this.mean+this.var*Math.sqrt(2)*inverse_erf(2*s - 1)
+  }
+
+  this.rand = function(){
+    return this.quantile(Math.random())
   }
 
   return this;

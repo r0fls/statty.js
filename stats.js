@@ -236,3 +236,23 @@ function median(values) {
   else
     return (values[half-1] + values[half]) / 2.0;
 }
+function bernoulli(p){
+  if (0 > p || p > 1){
+    return 'error, p outside acceptable range';
+  }
+
+  this.mean = p;
+  this.variance = p*(1-p);
+
+  this.pmf = function(x){
+    if (x===0){
+      return 1-this.mean;
+    }
+    if (x==1){
+      return this.mean;
+    }
+    else{
+      return Number.NaN;
+    }
+  };
+}

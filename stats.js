@@ -193,7 +193,7 @@ function laplace(mean, b){
     }
   }
 
- this.rand = function(iters){
+  this.rand = function(iters){
     iters = typeof iters !== 'undefined' ? iters : 1;
     if (iters>1){
       arr = new Array;
@@ -207,3 +207,27 @@ function laplace(mean, b){
 
   return this
 }
+
+laplace.fit = function(data){
+  var mean = median(data);
+  var b = 0;
+  for (i=0;i<data.length;i++){
+    b += Math.abs(data[i]-mean);
+  }
+  return laplace(mean, b);
+}
+
+
+function median(values) {
+
+  values.sort( function(a,b) {return a - b;} );
+
+  var half = Math.floor(values.length/2);
+
+  if(values.length % 2)
+    return values[half];
+  else
+    return (values[half-1] + values[half]) / 2.0;
+}
+
+

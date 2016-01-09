@@ -10,7 +10,6 @@
 //       a. binomial
 //    Continious.
 //       - poisson
-//       - laplace
 //       - exponential
 //       - pareto
 //       - beta

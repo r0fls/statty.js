@@ -17,6 +17,7 @@
 exports.normal = normal;
 exports.uniform = uniform;
 exports.laplace = laplace;
+exports.bernoulli= bernoulli;
 
 function normal(mean,variance) {
 
@@ -236,6 +237,7 @@ function median(values) {
   else
     return (values[half-1] + values[half]) / 2.0;
 }
+
 function bernoulli(p){
   if (0 > p || p > 1){
     return 'error, p outside acceptable range';
@@ -255,4 +257,51 @@ function bernoulli(p){
       return Number.NaN;
     }
   };
+
+  this.cdf = function(k){
+    if (k<0)
+      return 0;
+    if (0 <= k && k < 1)
+      return 1-this.mean;
+    if (k>1)
+      return 1;
+
+  };
+
+  this.quantile = function(p){
+    if (p<0)
+      return Number.NaN;
+    if (p < 1-this.mean)
+      return 0;
+    if (p > 1-this.mean && p <1)
+      return 1;
+  };
+  this.rand = function(n){
+    n = typeof n !== 'undefined' ? n : 1;
+    if (n>1){
+      var arr = [];
+      for (var i=0;i<n;i++){
+        arr.push(this.quantile(Math.random()));
+      }
+      return arr;
+    }
+    return this.quantile(Math.random());
+  };
+  return this;
+}
+
+bernoulli.fit = function(data){
+  return bernoulli(avg(data));
+};
+
+function sum(data){
+  var total = 0;
+  for (var i=0;i<data.length;i++){
+    total += data[i];
+  }
+  return total;
+}
+
+function avg(data){
+  return sum(data)/data.length;
 }

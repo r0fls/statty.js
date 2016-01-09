@@ -1,3 +1,4 @@
 stats = require('./stats.js')
-uni = stats.uniform.fit([10,20,30]) 
-console.log(uni.mean)
+console.log(stats.laplace(400,19).variance)
+l = stats.laplace.fit([400,399,401]);
+console.log(l.mean)

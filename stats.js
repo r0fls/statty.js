@@ -10,8 +10,9 @@
 //
 
 exports.normal = normal; 
-  
-  function normal(mean,variance) {
+exports.uniform = uniform;
+
+function normal(mean,variance) {
 
   mean = typeof mean !== 'undefined' ? mean : 0;
   variance = typeof variance !== 'undefined' ? variance : 1;
@@ -28,10 +29,10 @@ exports.normal = normal;
 
   this.quantile = function(s){
     if (s>1 || s<0){
-        return Number.NaN
+      return Number.NaN
     }
     if (s == .5){
-        return this.mean
+      return this.mean
     }
     return this.mean+this.var*Math.sqrt(2)*inverse_erf(2*s - 1)
   }
@@ -39,11 +40,11 @@ exports.normal = normal;
   this.rand = function(iters){
     iters = typeof iters !== 'undefined' ? iters : 1;
     if (iters>1){
-    arr = new Array;
-    for (i=0;i<iters;i++){
+      arr = new Array;
+      for (i=0;i<iters;i++){
         arr.push(this.quantile(Math.random()))
-    }
-    return arr
+      }
+      return arr
     }
     return this.quantile(Math.random())
   }
@@ -52,18 +53,18 @@ exports.normal = normal;
 }
 
 normal.fit = function(data){
-    mean = 0;
-    for (i=0;i<data.length;i++){
-      mean += data[i]
-    }
-    mean = mean/data.length;
-    variance = 0;
-    for (j=0;j<data.length;j++){
-      variance += Math.pow(mean-data[j],2);
-    }
-    variance = variance/(data.length-1);
-    return normal(mean,variance)
+  mean = 0;
+  for (i=0;i<data.length;i++){
+    mean += data[i]
   }
+  mean = mean/data.length;
+  variance = 0;
+  for (j=0;j<data.length;j++){
+    variance += Math.pow(mean-data[j],2);
+  }
+  variance = variance/(data.length-1);
+  return normal(mean,variance)
+}
 
 
 function erf_series(x,n){
@@ -94,3 +95,35 @@ function inverse_erf(x){
   return (Math.abs(x)/x)*Math.sqrt(Math.sqrt(term1)-term2) 
 }
 
+function uniform(a,b){
+  a = typeof a !== 'undefined' ? a : 0;
+  b = typeof b !== 'undefined' ? b : 1;
+  this.a = a;
+  this.b = b;
+  this.mean = (this.a - this.b)/2;
+  this.variance = Math.pow(this.b - this.a,2)/12;
+
+  this.pdf = function(x){
+    if (x>a && x<b){ 
+      return 1/(this.b-this.a)
+    }
+    return 0
+  }
+
+  this.cdf = function(x){
+    if (x<this.a){
+      return 0
+    }
+    if (x<this.b){
+      return (x-this.a)/(this.b-this.a)
+    }
+    if (x>=this.b){
+      return 1
+    }
+  }
+
+  this.rand = function(){
+    return this.a + (this.b - this.a)*Math.random()
+  }
+  return this
+}

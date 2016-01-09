@@ -219,6 +219,7 @@ laplace.fit = function(data){
   for (i=0;i<data.length;i++){
     b += Math.abs(data[i]-mean);
   }
+  b = b/data.length;
   return laplace(mean, b);
 }
 

@@ -123,11 +123,18 @@ function uniform(a,b){
   }
 
   this.quantile = function(x){
-    return x*(this.b-this.a)
+    return x*(this.b-this.a)+this.a
   }
 
-  this.rand = function(){
-    return this.a + (this.b - this.a)*Math.random()
+  this.rand = function(n){
+    if (n>0){
+      arr = new Array;
+      for (i=0;i++;i<n){
+        arr.push(this.a + (this.b - this.a)*Math.random());
+      }
+      return arr;
+    }
+      return this.a + (this.b - this.a)*Math.random()
   }
   return this
 }

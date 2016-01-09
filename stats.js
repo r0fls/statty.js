@@ -101,7 +101,7 @@ function uniform(a,b){
   this.a = a;
   this.b = b;
   this.mean = (this.a - this.b)/2;
-  this.variance = Math.pow(this.b - this.a,2)/12;
+  this.variance = Math.pow(this.b - this.a,2)/12
 
   this.pdf = function(x){
     if (x>a && x<b){ 
@@ -120,6 +120,10 @@ function uniform(a,b){
     if (x>=this.b){
       return 1
     }
+  }
+
+  this.quantile = function(x){
+    return x*(this.b-this.a)
   }
 
   this.rand = function(){

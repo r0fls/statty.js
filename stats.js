@@ -11,6 +11,7 @@
 
 exports.normal = normal; 
 exports.uniform = uniform;
+exports.laplace = laplace;
 
 function normal(mean,variance) {
 
@@ -164,4 +165,45 @@ function min(data){
   return Math.min.apply(null, data);
 }
 
+function laplace(mean, b){
+  mean = typeof mean !== 'undefined' ? mean : 0;
+  b = typeof b !== 'undefined' ? b : 1;
+  this.mean = mean;
+  this.b = b;
+  this.variance = 2*Math.pow(b,2);
 
+  this.pdf = function(x){
+    return Math.exp(-Math.abs(x-this.mean)/b)/(2*b)
+  }
+
+  this.cdf = function(x){
+    if (x<this.mean){
+      return Math.exp((x-this.mean)/this.b)/2
+    }
+    if (x>=this.mean){
+      return 1 - Math.exp((this.mean-x)/this.b)/2
+    }
+  }
+  this.quantile = function(x){
+    if (x>0 && x<1/2){
+      return this.mean + this.b*Math.log(2*x*b);
+    }
+    if (x>1/2 && x<1){
+      return this.mean - this.b*Math.log(2*(1-x))
+    }
+  }
+
+ this.rand = function(iters){
+    iters = typeof iters !== 'undefined' ? iters : 1;
+    if (iters>1){
+      arr = new Array;
+      for (i=0;i<iters;i++){
+        arr.push(this.quantile(Math.random()))
+      }
+      return arr
+    }
+    return this.quantile(Math.random())
+  }
+
+  return this
+}

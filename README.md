@@ -8,7 +8,7 @@ Intended for `node.js`. Install with `npm install statty.js` or clone the repo a
     
 So far the only distributions are the `normal` and `uniform`. The normal is initialized with `mean` and `variance`, and the uniform is initialized with endpoint parameters `a` and `b`. They then have the following methods:
     
-    var stats = require('./stats.js')
+    var stats = require('statty.js')
     norm = stats.normal(5,1)               \\ normal with mean 5, variance 1
     unif = stats.uniform(10,20)            \\ uniform from range 10 to 20
     console.log(norm.pdf(1))               \\ probability density function

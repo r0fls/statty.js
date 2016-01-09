@@ -6,8 +6,14 @@
 
 //TODO
 // 2. add more distributions
-//    a. Uniform
-//
+//    Discrete:
+//       a. binomial
+//    Continious.
+//       - poisson
+//       - laplace
+//       - exponential
+//       - pareto
+//       - beta
 
 exports.normal = normal; 
 exports.uniform = uniform;

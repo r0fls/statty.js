@@ -1,9 +1,8 @@
 //TODO
 // add more distributions
-//    Discrete:
-//       - poisson
+//    Discrete
+//       - 
 //    Continious.
-//       - exponential
 //       - pareto
 //       - beta
 // enforce proper ranges for functions
@@ -13,8 +12,8 @@ exports.uniform = uniform;
 exports.laplace = laplace;
 exports.bernoulli= bernoulli;
 exports.binomial = binomial;
-exports.poisson= poisson;
-
+exports.poisson = poisson;
+exports.exponential = exponential;
 
 function normal(mean,variance) {
 
@@ -388,6 +387,44 @@ function poisson(l){
 
   return this;
 }
+
 poisson.fit = function(data){
   return poisson(avg(data));
+}
+
+function exponential(l){
+  this.l = l;
+  this.mean = Math.pow(l,-1);
+  this.variance = Math.pow(l,-2);
+
+  this.pdf = function(x){
+    return this.l*Math.exp(-this.l*x);
+  };
+
+  this.cdf = function(x){
+    return 1-Math.exp(-this.l*x);
+  };
+
+  this.quantile = function(p){
+    return -Math.log(1-p)/this.l;
+  }
+
+  this.rand = function(n){
+    n = typeof n !== 'undefined' ? n : 1;
+    if (n>1){
+      var arr = [];
+      for (var i=0;i<n;i++){
+        arr.push(this.quantile(Math.random()));
+      }
+      return arr;
+    }
+    return this.quantile(Math.random());
+  };
+
+  return this;
+}
+
+exponential.fit = function(data){
+  var l = 1/avg(data);
+  return exponential(l);
 }

@@ -1,7 +1,13 @@
 # statty.js
 Statistics for javascript
 
-Intended for `node.js`. Install with `npm install statty.js` or clone the repo and put it in your project. Example usage:
+Intended for `node.js`. 
+###Installation
+`npm install statty.js`
+
+Or clone the repo and put it in your project. 
+
+###Examples
 
     var stats = require('statty.js')
     console.log(stats.normal(5,1).rand())

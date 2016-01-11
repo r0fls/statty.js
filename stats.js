@@ -1,11 +1,5 @@
-//exports.stats = {
-//var stats = function
-//distribution: function() {},
-
-//statsjs.prototype.pdf = function(){};
-
 //TODO
-// 2. add more distributions
+// add more distributions
 //    Discrete:
 //       a. binomial
 //    Continious.
@@ -13,11 +7,13 @@
 //       - exponential
 //       - pareto
 //       - beta
+// enforce proper ranges for functions
 
 exports.normal = normal;
 exports.uniform = uniform;
 exports.laplace = laplace;
 exports.bernoulli= bernoulli;
+exports.binomial = binomial;
 
 function normal(mean,variance) {
 
@@ -294,6 +290,7 @@ bernoulli.fit = function(data){
   return bernoulli(avg(data));
 };
 
+
 function sum(data){
   var total = 0;
   for (var i=0;i<data.length;i++){
@@ -305,3 +302,44 @@ function sum(data){
 function avg(data){
   return sum(data)/data.length;
 }
+
+function binomial(n,p){
+  this.n = n;
+  this.p = p;
+  this.mean = p*n;
+  this.variance = n*p*(1-p);
+
+  this.pmf = function(k){
+    return factorial(this.n)*Math.pow(this.p,k)*Math.pow(1-this.p,n-k)/(factorial(k)*factorial(this.n-k));
+  }
+
+  this.cdf = function(k){
+    var total =0;
+    for (var i=0;i<=k;i++){
+      total += this.pmf(i);
+    }
+    return total;
+  }
+
+  this.quantile = function(p){
+    for(var i=0;i<=this.n;i++){
+      if (this.cdf(i)>=p){
+        return i;
+      }
+    }
+  }
+  this.rand = function(n){
+    n = typeof n !== 'undefined' ? n : 1;
+    if (n>1){
+    var arr = [];
+    for (var i=0;i<n;i++){
+      arr.push(this.quantile(Math.random()));
+    }
+    return arr;
+    }
+    return this.quantile(Math.random());
+  }
+  return this;
+
+}
+

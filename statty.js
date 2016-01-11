@@ -1,9 +1,8 @@
 //TODO
 // add more distributions
 //    Discrete:
-//       a. binomial
-//    Continious.
 //       - poisson
+//    Continious.
 //       - exponential
 //       - pareto
 //       - beta
@@ -14,6 +13,8 @@ exports.uniform = uniform;
 exports.laplace = laplace;
 exports.bernoulli= bernoulli;
 exports.binomial = binomial;
+exports.poisson= poisson;
+
 
 function normal(mean,variance) {
 
@@ -235,6 +236,7 @@ function median(values) {
 }
 
 function bernoulli(p){
+  p = typeof p !== 'undefined' ? p : 0;
   if (0 > p || p > 1){
     return 'error, p outside acceptable range';
   }
@@ -311,7 +313,7 @@ function binomial(n,p){
 
   this.pmf = function(k){
     return factorial(this.n)*Math.pow(this.p,k)*Math.pow(1-this.p,n-k)/(factorial(k)*factorial(this.n-k));
-  }
+  };
 
   this.cdf = function(k){
     var total =0;
@@ -319,7 +321,7 @@ function binomial(n,p){
       total += this.pmf(i);
     }
     return total;
-  }
+  };
 
   this.quantile = function(p){
     for(var i=0;i<=this.n;i++){
@@ -327,19 +329,65 @@ function binomial(n,p){
         return i;
       }
     }
-  }
+  };
+
   this.rand = function(n){
     n = typeof n !== 'undefined' ? n : 1;
     if (n>1){
-    var arr = [];
-    for (var i=0;i<n;i++){
-      arr.push(this.quantile(Math.random()));
-    }
-    return arr;
+      var arr = [];
+      for (var i=0;i<n;i++){
+        arr.push(this.quantile(Math.random()));
+      }
+      return arr;
     }
     return this.quantile(Math.random());
-  }
+  };
+
   return this;
 
 }
 
+function poisson(l){
+  l = typeof l !== 'undefined' ? l : 1;
+  this.mean = l;
+  this.variance = l;
+
+  this.pmf = function(k){
+    return Math.pow(this.mean,k)*Math.exp(-this.mean)/factorial(k);
+  };
+
+  this.cdf = function(k){
+    var total = 0;
+    for (var i=0;i<=k;i++){
+      total+=this.pmf(i);
+    }
+    return total;
+  };
+
+  this.quantile = function(p){
+    var total = 0;
+    for(var i=0;;i++){
+      total += this.pmf(i);
+      if (total>=p){
+        return i;
+      }
+   }
+  };
+
+  this.rand = function(n){
+    n = typeof n !== 'undefined' ? n : 1;
+    if (n>1){
+      var arr = [];
+      for (var i=0;i<n;i++){
+        arr.push(this.quantile(Math.random()));
+      }
+      return arr;
+    }
+    return this.quantile(Math.random());
+  };
+
+  return this;
+}
+poisson.fit = function(data){
+  return poisson(avg(data));
+}

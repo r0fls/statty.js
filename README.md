@@ -12,7 +12,7 @@ Or clone the repo and put it in your project.
     var stats = require('statty.js')
     console.log(stats.normal(5,1).rand())
     
-So far the only distributions are the `normal`, `uniform`, `laplace`, `poisson`, `pareto`, `exponential`, `bernoulli`, and `binomial`. In general, each distribution is initalized with the parameters listed on Wikipedia, in the order listed there. 
+So far the only distributions are the `normal`, `uniform`, `laplace`, `poisson`, `pareto`, `exponential`, `bernoulli`, and `binomial`. In general, each distribution is initalized with the parameters listed on Wikipedia, in the order listed there. When using the `fit` method, which is available for all distributions expcept the `binomial`, parameters are calculated using the Maximum Likelihood Estimator for the distribution.
 
 They then have the following methods:
     

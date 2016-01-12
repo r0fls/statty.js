@@ -433,17 +433,61 @@ exponential.fit = function(data){
 function pareto(x,a){
     this.x = x;
     this.a = a;
+    if (a<=1){
+      this.mean = Number.POSITIVE_INFINITY;
+    }
 
-    this.pdf = function(x){
-        return a*Math.pow(this.x,a)/Math.pow(x,a+1);
+    else {
+        if (a>1){
+          this.mean = a*x/(a-1);
+        }
     };
 
-    this.cdf = function(x){
-        return 1 - Math.pow(this.x/x,a);
+    if (a<=2){
+      this.variance = Number.POSITIVE_INFINITY;
+    }
+
+    else {
+        if (a>2){
+          this.variance = Math.pow(x,2)*a/(Math.pow(a-1,2)*(a-2));
+        }
+    };
+
+    this.pdf = function(z){
+        return a*Math.pow(this.x,a)/Math.pow(z,a+1);
+    };
+
+    this.cdf = function(z){
+        return 1 - Math.pow(this.x/z,a);
     };
 
     this.quantile = function(p){
-       return 1/Math.pow(1-p,1/a) 
-    }
+       return 1/Math.pow(1-p,1/a);
+    };
+
+    this.rand = function(n){
+        n = typeof n !== 'undefined' ? n : 1;
+        if (n>1){
+            var arr = [];
+            for (var i=0;i<n;i++){
+                arr.push(this.quantile(Math.random()));
+            }
+            return arr;
+        }
+        return this.quantile(Math.random());
+    };
+
+    return this;
 
 }
+
+pareto.fit = function(data){
+  var x = min(data);
+  var terms = data.map(function(e){
+    return Math.log(e) - Math.log(x);
+  });
+
+  var a = data.length/sum(terms)
+  return pareto(x,a)
+}
+

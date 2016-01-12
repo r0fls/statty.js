@@ -22,7 +22,7 @@ They then have the following methods:
     pare = stats.pareto(1,4/5)          \\ pareto with scale 1 and shape .8 
     lapl = stats.laplace(10,4)          \\ laplace with mean 10, scale 4 
     pois = stats.poisson(10)            \\ poisson with mean 10 
-    expo = stats.expo(1/10)             \\ exponential with mean 10 
+    expo = stats.exponential(1/10)      \\ exponential with mean 10 
     bern = stats.bernoulli(.7)          \\ bernoulli with mean .7
     bino = stats.binomial(10,.7)        \\ bernoulli with 10 trials, probability .7
     console.log(norm.pdf(1))            \\ probability density function

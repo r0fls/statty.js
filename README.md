@@ -1,7 +1,7 @@
 # statty.js
 Statistics for javascript
 
-Intended for `node.js`. 
+Intended for `node.js`. Available through [npm](https://www.npmjs.com/package/statty.js).
 ###Installation
 `npm install statty.js`
 

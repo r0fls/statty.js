@@ -23,7 +23,7 @@ Installation
 
   npm install statty.js
 
-Or clone the repo and put it in your project.
+Or clone the `repo <https://github.com/r0fls/statty.js>`_ and put it in your project.
 
 .. _distributions:
 

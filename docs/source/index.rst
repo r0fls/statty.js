@@ -13,10 +13,11 @@ Welcome to statty.js's documentation!
 Contents
 ========
 
-* :ref:`Installation`
-* :ref:`Distributions`
+* :ref:`install`
+* :ref:`distributions`
 
-.. _Installation:
+.. _install:
+
 Installation
 ==================
 
@@ -24,7 +25,8 @@ npm install statty.js
 
 Or clone the repo and put it in your project.
 
-.. _Distributions:
+.. _distributions:
+
 Distributions
 ==================
 Continuous

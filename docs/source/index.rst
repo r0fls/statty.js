@@ -6,17 +6,39 @@
 Welcome to statty.js's documentation!
 =====================================
 
-Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
+Contents
+========
 
+* :ref:`Installation`
+* :ref:`Distributions`
 
-Indices and tables
+Installation
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+::npm install statty.js
+
+Or clone the repo and put it in your project.
+
+
+Distributions
+==================
+Continuous
+~~~~~~~~~~
+
+* :ref:`Normal`
+* :ref:`Uniform`
+* :ref:`Laplace`
+* :ref:`Pareto`
+* :ref:`Exponential`
+Discrete
+~~~~~~~~
+* :ref:`Bernoulli`
+* :ref:`Binomial`
+* :ref:`Geometric`
+* :ref:`Poisson`
+
 

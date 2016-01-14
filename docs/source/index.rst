@@ -39,6 +39,7 @@ Contribute
 
 Distributions
 ==================
+
 Continuous
 ~~~~~~~~~~
 * :ref:`Normal`
@@ -46,6 +47,7 @@ Continuous
 * :ref:`Laplace`
 * :ref:`Pareto`
 * :ref:`Exponential`
+
 Discrete
 ~~~~~~~~
 * :ref:`Bernoulli`

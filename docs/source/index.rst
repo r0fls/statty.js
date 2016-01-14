@@ -13,8 +13,8 @@ Welcome to statty.js's documentation!
 Contents
 ========
 
-* :ref: `Installation`
-* :ref: `Distributions`
+* :ref:`Installation`
+* :ref:`Distributions`
 
 Installation
 ==================

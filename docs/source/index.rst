@@ -13,8 +13,8 @@ Welcome to statty.js's documentation!
 Contents
 ========
 
-*`Installation http://stattyjs.readthedocs.org/en/latest/#installation`_
-*`Distributions http://stattyjs.readthedocs.org/en/latest/#distributions`_
+* :ref: `Installation`
+* :ref: `Distributions`
 
 Installation
 ==================

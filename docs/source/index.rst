@@ -14,6 +14,7 @@ Contents
 ========
 
 * :ref:`install`
+* :ref:`contribute`
 * :ref:`distributions`
 
 .. _install:
@@ -24,6 +25,15 @@ Installation
   npm install statty.js
 
 Or clone the `repo <https://github.com/r0fls/statty.js>`_ and put it in your project.
+
+.. _contribute:
+
+Contribute
+----------
+
+- Issue Tracker: github.com/r0fls/statty.js/issues/
+- Source Code: github.com/r0fls/statty.js
+
 
 .. _distributions:
 

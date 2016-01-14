@@ -21,7 +21,7 @@ Contents
 Installation
 ==================
 
-npm install statty.js
+  npm install statty.js
 
 Or clone the repo and put it in your project.
 

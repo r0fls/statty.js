@@ -41,7 +41,6 @@ Distributions
 ==================
 Continuous
 ~~~~~~~~~~
-
 * :ref:`Normal`
 * :ref:`Uniform`
 * :ref:`Laplace`

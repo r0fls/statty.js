@@ -1,2 +1,2 @@
 stats = require('./statty.js')
-console.log(stats.poisson.fit([10,11,12,10,11]).rand())
+console.log(stats.geometric.fit(stats.geometric(.4).rand(1000)).mean)

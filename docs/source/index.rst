@@ -34,22 +34,23 @@ Or clone the `repo <https://github.com/r0fls/statty.js>`_ and put it in your pro
 Contribute
 ----------
 
-- Issue Tracker: github.com/r0fls/statty.js/issues/
-- Source Code: github.com/r0fls/statty.js
+- `Issue Tracker <https://github.com/r0fls/statty.js/issues>`_
+- `Source Code <https://github.com/r0fls/statty.js>`_
 
 
 .. _distributions:
 
 Distributions
 ==================
+
 Continuous
 ~~~~~~~~~~
-
 * :ref:`Normal`
 * :ref:`Uniform`
 * :ref:`Laplace`
 * :ref:`Pareto`
 * :ref:`Exponential`
+
 Discrete
 ~~~~~~~~
 * :ref:`Bernoulli`

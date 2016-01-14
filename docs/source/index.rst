@@ -16,6 +16,7 @@ Contents
 * :ref:`Installation`
 * :ref:`Distributions`
 
+.. _Installation:
 Installation
 ==================
 
@@ -23,7 +24,7 @@ npm install statty.js
 
 Or clone the repo and put it in your project.
 
-
+.. _Distributions:
 Distributions
 ==================
 Continuous

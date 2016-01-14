@@ -1,9 +1,9 @@
 //TODO
+// remove 'rand' methods from all functions (prototype is reusable)
 // add more distributions
 //    Discrete
 //       - 
 //    Continious.
-//       - pareto
 //       - beta
 // enforce proper ranges for functions
 
@@ -14,7 +14,22 @@ exports.bernoulli= bernoulli;
 exports.binomial = binomial;
 exports.poisson = poisson;
 exports.exponential = exponential;
-exports.pareto= pareto;
+exports.pareto = pareto;
+exports.geometric = geometric;
+
+
+Object.prototype.rand = function(n){
+    n = typeof n !== 'undefined' ? n : 1;
+        if (n>1){
+            var arr = [];
+            for (var i=0;i<n;i++){
+                arr.push(this.quantile(Math.random()));
+            }
+            return arr;
+        }
+        return this.quantile(Math.random());
+};
+
 
 function normal(mean,variance) {
 
@@ -491,3 +506,27 @@ pareto.fit = function(data){
   return pareto(x,a)
 }
 
+function geometric(p){
+    this.mean = 1/p;
+    this.variance = (1-p)/Math.pow(p,2);
+    this.p = p;
+
+    this.pmf = function(k){
+        return Math.pow(1-this.p,k);
+    };
+
+    this.cdf = function(k){
+        return 1-Math.pow(1-this.p,k);
+    };
+
+    this.quantile = function(r){
+        return Math.ceil(Math.log(1-r)/Math.log(1-this.p));
+    };
+
+    return this;
+
+}
+
+geometric.fit = function(data){
+    return geometric(1/avg(data));
+}

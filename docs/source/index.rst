@@ -31,8 +31,8 @@ Or clone the `repo <https://github.com/r0fls/statty.js>`_ and put it in your pro
 Contribute
 ----------
 
-- Issue Tracker: github.com/r0fls/statty.js/issues/
-- Source Code: github.com/r0fls/statty.js
+- `Source Code <https://github.com/r0fls/statty.js/issues>`_
+- `Source Code <https://github.com/r0fls/statty.js>`_
 
 
 .. _distributions:

@@ -21,18 +21,19 @@ Contents
 
 Installation
 ==================
+Using npm::
 
     npm install statty.js
 
-Or clone the `repo <https://github.com/r0fls/statty.js>`_ and put it in your project:
+Or clone the `repo <https://github.com/r0fls/statty.js>`_ and put it in your project::
 
-    git clone https://github.com/r0fls/statty.js.git
-    mv statty.js your/project/path
+   git clone https://github.com/r0fls/statty.js.git
+   mv statty.js your/project/path
 
 .. _contribute:
 
 Contribute
-----------
+==========
 
 - `Issue Tracker <https://github.com/r0fls/statty.js/issues>`_
 - `Source Code <https://github.com/r0fls/statty.js>`_
@@ -41,15 +42,16 @@ Contribute
 .. _distributions:
 
 Distributions
-==================
+==============
+~~~~~~~~~~
 Continuous
 ~~~~~~~~~~
-
 * :ref:`Normal`
 * :ref:`Uniform`
 * :ref:`Laplace`
 * :ref:`Pareto`
 * :ref:`Exponential`
+~~~~~~~~
 Discrete
 ~~~~~~~~
 * :ref:`Bernoulli`

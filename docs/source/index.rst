@@ -26,8 +26,8 @@ Installation
 
 Or clone the `repo <https://github.com/r0fls/statty.js>`_ and put it in your project:
 
-   git clone https://github.com/r0fls/statty.js.git
-   mv statty.js your/project/path
+    git clone https://github.com/r0fls/statty.js.git
+    mv statty.js your/project/path
 
 .. _contribute:
 
@@ -42,20 +42,17 @@ Contribute
 
 Distributions
 ==================
-
 Continuous
 ~~~~~~~~~~
+
 * :ref:`Normal`
 * :ref:`Uniform`
 * :ref:`Laplace`
 * :ref:`Pareto`
 * :ref:`Exponential`
-
 Discrete
 ~~~~~~~~
 * :ref:`Bernoulli`
 * :ref:`Binomial`
 * :ref:`Geometric`
 * :ref:`Poisson`
-
-

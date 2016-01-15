@@ -16,7 +16,8 @@ exports.poisson = poisson;
 exports.exponential = exponential;
 exports.pareto = pareto;
 exports.geometric = geometric;
-
+exports.counter = counter;
+exports.median = median;
 
 Object.prototype.rand = function(n){
     n = typeof n !== 'undefined' ? n : 1;
@@ -529,4 +530,29 @@ function geometric(p){
 
 geometric.fit = function(data){
     return geometric(1/avg(data));
+}
+
+function counter(item){
+   this.keys = {};
+   for (object in item){
+       if (this.keys[object] != 'undefined'){
+           this.keys[object] += 1;
+       }
+       else {
+           this.keys[object] = 1;
+       }
+   }
+       return this;
+   }
+
+function median(data){
+    data = data.sort();
+    len = data.length/2;
+    if (Math.floor(len) == len)
+    {
+    return (data[len]+data[len-1])/2;
+    }
+    else{
+        return data[Math.floor(len)];
+}
 }

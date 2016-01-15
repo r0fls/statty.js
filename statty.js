@@ -1,5 +1,4 @@
 //TODO
-// remove 'rand' methods from all functions (prototype is reusable)
 // add more distributions
 //    Discrete
 //       - 
@@ -338,7 +337,7 @@ function binomial(n,p){
         }
         return total;
     };
-
+keys[object]
     this.quantile = function(p){
         for(var i=0;i<=this.n;i++){
             if (this.cdf(i)>=p){
@@ -534,14 +533,15 @@ geometric.fit = function(data){
 
 function counter(item){
    this.keys = {};
-   for (object in item){
-       if (this.keys[object] != 'undefined'){
-           this.keys[object] += 1;
+   for (var i=0; i<item.length;i++){
+       if (isNaN(this.keys[item[i]])){
+           this.keys[item[i]] = 1;
        }
        else {
-           this.keys[object] = 1;
+           this.keys[item[i]] = this.keys[item[i]] + 1;
        }
    }
+   //returns whole global environment, not intended
        return this;
    }
 

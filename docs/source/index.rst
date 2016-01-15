@@ -21,6 +21,7 @@ Contents
 
 Installation
 ==================
+Using npm::
 
     npm install statty.js
 

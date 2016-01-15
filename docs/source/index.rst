@@ -41,16 +41,18 @@ Contribute
 
 .. _distributions:
 
+==================
 Distributions
 ==================
+~~~~~~~~~~
 Continuous
 ~~~~~~~~~~
-
 * :ref:`Normal`
 * :ref:`Uniform`
 * :ref:`Laplace`
 * :ref:`Pareto`
 * :ref:`Exponential`
+~~~~~~~~
 Discrete
 ~~~~~~~~
 * :ref:`Bernoulli`

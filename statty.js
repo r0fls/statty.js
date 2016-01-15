@@ -17,6 +17,7 @@ exports.pareto = pareto;
 exports.geometric = geometric;
 exports.counter = counter;
 exports.median = median;
+exports.mode = mode;
 
 Object.prototype.rand = function(n){
     n = typeof n !== 'undefined' ? n : 1;
@@ -542,7 +543,7 @@ function counter(item){
        }
    }
    //returns whole global environment, not intended
-       return this;
+       return this.keys;
    }
 
 function median(data){
@@ -555,4 +556,9 @@ function median(data){
     else{
         return data[Math.floor(len)];
 }
+}
+
+function mode(obj){
+    var count = counter(obj)
+    return Object.keys(count).reduce(function(a, b){ return count[a] >= count[b] ? a : b });
 }

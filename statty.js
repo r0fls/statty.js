@@ -1,4 +1,5 @@
 //TODO
+// Refactor
 // add more distributions
 //    Discrete
 //       - 
@@ -338,7 +339,7 @@ function binomial(n,p){
         }
         return total;
     };
-keys[object]
+
     this.quantile = function(p){
         for(var i=0;i<=this.n;i++){
             if (this.cdf(i)>=p){

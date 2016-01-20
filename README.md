@@ -7,14 +7,14 @@ Intended for `node.js`. Available through [npm](https://www.npmjs.com/package/st
 
 Or clone the repo and put it in your project. 
 
-###Examples
+###Setup
 
     var stats = require('statty.js')
     console.log(stats.normal(5,1).rand())
     
 So far the only distributions are the `normal`, `uniform`, `laplace`, `poisson`, `pareto`, `exponential`, `geometric`, `bernoulli`, and `binomial`. In general, each distribution is initalized with the parameters listed on Wikipedia, in the order listed there. When using the `fit` method, which is available for all distributions expcept the `binomial`, parameters are calculated using the Maximum Likelihood Estimator for the distribution.
 
-They then have the following methods:
+#####Examples
     
     var stats = require('statty.js')
     norm = stats.normal(5,1)            \\ normal with mean 5, variance 1

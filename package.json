@@ -1,6 +1,6 @@
 {
     "name": "statty.js",
-    "version": "0.1.2",
+    "version": "1.0.0",
     "description": "JavaScript Probability and Statistics",
     "main": "stats.js",
     "directories": {},

@@ -528,6 +528,18 @@ exports.geometric = function(p){
         return Math.ceil(Math.log(1-r)/Math.log(1-p));
     };
 
+    var rand = function(n){
+        n = typeof n !== 'undefined' ? n : 1;
+        if (n>1){
+            var arr = [];
+            for (var i=0;i<n;i++){
+                arr.push(quantile(Math.random()));
+            }
+            return arr;
+        }
+        return quantile(Math.random());
+    };
+
     var ret = {
         mean: mean,
         variance: variance,

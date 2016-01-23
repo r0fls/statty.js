@@ -179,10 +179,10 @@ exports.laplace = function(mean, b){
         }
     };
     var quantile = function(x){
-        if (x>0 && x<1/2){
+        if (x>0 && x<=1/2){
             return mean + b*Math.log(2*x*b);
         }
-        if (x>1/2 && x<1){
+        if (x>=1/2 && x<1){
             return mean - b*Math.log(2*(1-x));
         }
     };

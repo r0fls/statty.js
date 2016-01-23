@@ -21,7 +21,7 @@ So far the only distributions are the `normal`, `uniform`, `laplace`, `poisson`,
     unif = stats.uniform(10,20)         \\ uniform from range 10 to 20
     pare = stats.pareto(1,6/5)          \\ pareto with scale 1 and shape 1.2 
     lapl = stats.laplace(10,4)          \\ laplace with mean 10, scale 4 
-    geom = stats.geometric(.5)          \\ geometric (total trials), sucess .5
+    geom = stats.geometric(.5)          \\ geometric with sucess .5
     pois = stats.poisson(10)            \\ poisson with mean 10 
     expo = stats.exponential(1/10)      \\ exponential with mean 10 
     bern = stats.bernoulli(.7)          \\ bernoulli with mean .7

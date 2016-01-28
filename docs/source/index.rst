@@ -27,9 +27,9 @@ Features
 - Generate random numbers
 - Fit data to a distribution using the MLE
 - Distributions each have the following
-    + attributes: `mean`, `variance`
-    + functions: `pdf`/`pmf`, `cdf`, `quantile`
-    + initializer: `fit`
+    + attributes: `mean` and `variance`
+    + functions: `pdf` or `pmf`, `cdf`, and `quantile`
+    + initializer: `fit` (except the Bernoulli)
 
 .. _install:
 

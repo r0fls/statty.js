@@ -20,6 +20,7 @@ Contents
 
 
 .. _features:
+
 Features
 ========
 
@@ -31,6 +32,7 @@ Features
     + initializer: `fit`
 
 .. _install:
+
 Installation
 ==================
 Using npm::

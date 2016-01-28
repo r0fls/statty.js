@@ -544,7 +544,7 @@ exports.geometric.fit = function(data){
     return exports.geometric(1/avg(data));
 }
 
-// common functions for statty.js
+// common functions
 
 function counter(item){
    var keys = {};

@@ -14,11 +14,23 @@ Contents
 ========
 
 * :ref:`install`
+* :ref:`features`
 * :ref:`contribute`
 * :ref:`distributions`
 
-.. _install:
 
+.. _features:
+Features
+========
+
+- Generate random numbers
+- Fit data to a distribution using the MLE
+- Distributions each have the following
+    + attributes: `mean`, `variance`
+    + functions: `pdf`/`pmf`, `cdf`, `quantile`
+    + initializer: `fit`
+
+.. _install:
 Installation
 ==================
 Using npm::

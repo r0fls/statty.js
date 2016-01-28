@@ -2,19 +2,6 @@ exports.counter = counter;
 exports.median = median;
 exports.mode = mode;
 
-/* rand is the same for each of the distributions
- *
- * Object.prototype.rand = function(n){
-    n = typeof n !== 'undefined' ? n : 1;
-        if (n>1){
-            var arr = [];
-            for (var i=0;i<n;i++){
-                arr.push(this.quantile(Math.random()));
-            }
-            return arr;
-        }
-        return this.quantile(Math.random());
-}; */
 
 exports.normal = function( _mean, _variance ) {
 
@@ -631,7 +618,7 @@ function min(data){
 }
 
 
-//this attemps to cache the factorial function (refactor?)
+//this caches the factorial function. Should use gamma
 var f = [];
 function factorial (n) {
     if (n === 0 || n == 1)

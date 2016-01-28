@@ -556,7 +556,6 @@ function counter(item){
            keys[item[i]] = keys[item[i]] + 1;
        }
    }
-   //returns whole global environment, not intended
        return keys;
    }
 

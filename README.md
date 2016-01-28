@@ -36,3 +36,6 @@ So far the only distributions are the `normal`, `uniform`, `laplace`, `poisson`,
     console.log(norm.mean)              \\ mean attribute (calculated for uniform)
     console.log(norm.variance)          \\ variance attribute (calculated for uniform)
     console.log(norm.rand(10))          \\ generates array of 10 random numbers
+
+###Read the Docs
+For more information, see the full [documentation](http://stattyjs.readthedocs.org/en/latest/#).

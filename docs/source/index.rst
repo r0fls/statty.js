@@ -24,12 +24,12 @@ Contents
 Features
 ========
 
-- Generate random numbers
-- Fit data to a distribution using the MLE
-- Distributions each have the following
-    + attributes: `mean` and `variance`
-    + functions: `pdf` or `pmf`, `cdf`, and `quantile`
-    + initializer: `fit` (except the Bernoulli)
+- **Generate random numbers from different distributions**
+- **Fit data to a distribution using the MLE**
+- **Distributions each have the following**
+    + attributes: mean and variance
+    + functions: pdf or pmf, cdf, quantile and rand
+    + initializer: fit (except the Bernoulli)
 
 .. _install:
 

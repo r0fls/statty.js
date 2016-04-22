@@ -430,8 +430,8 @@ exports.exponential.fit = function(data){
 }
 
 exports.pareto = function(x,a){
-    x = x;
-    a = a;
+    var x = x;
+    var a = a;
     if (a<=1){
       mean = Number.POSITIVE_INFINITY;
     }

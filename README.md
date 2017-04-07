@@ -2,19 +2,19 @@
 Statistics for javascript
 
 Intended for `node.js`. Available through [npm](https://www.npmjs.com/package/statty.js).
-###Installation
+### Installation
 `npm install statty.js`
 
 Or clone the repo and put it in your project. 
 
-###Setup
+### Setup
 ```javascript
 var stats = require('statty.js')
 console.log(stats.normal(5,1).rand())
 ```    
 So far the only distributions are the `normal`, `uniform`, `laplace`, `poisson`, `pareto`, `exponential`, `geometric`, `bernoulli`, and `binomial`. In general, each distribution is initalized with the parameters listed on Wikipedia, in the order listed there. When using the `fit` method, which is available for all distributions expcept the `binomial`, parameters are calculated using the Maximum Likelihood Estimator for the distribution.
 
-#####Examples
+##### Examples
     
 ```javascript
 var stats = require('statty.js')
@@ -39,5 +39,5 @@ console.log(norm.variance)          \\ variance attribute (calculated for unifor
 console.log(norm.rand(10))          \\ generates array of 10 random numbers
 ```
 
-###Read the Docs
+### Read the Docs
 For more information, see the full [documentation](http://stattyjs.readthedocs.org/en/latest/#).
